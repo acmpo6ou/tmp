@@ -1,0 +1,36 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Plugins
+set surround
+set ReplaceWithRegister
+set argtextobj
+set exchange
+set textobj-entire
+
+filetype on
+filetype plugin on
+filetype plugin indent on
+
+set incsearch	     " инкреминтируемый поиск
+set hlsearch	     " подсветка результатов поиска
+set ideajoin
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" my settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap 2o o<CR>
+nnoremap 2O O<Esc>O
+
+nnoremap [<Space> mpO<Esc>`p
+nnoremap ]<Space> mpo<Esc>`p
+
+" move tabs
+nnoremap tm :tabm +1<CR>
+nnoremap tM :tabm -1<CR>
+
+" goto definition
+nmap g[ :action GotoImplementation<CR>
+
+noh

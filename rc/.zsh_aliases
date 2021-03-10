@@ -1,0 +1,21 @@
+# Python aliases
+alias python='python3'
+alias pip='pip3'
+alias py7='python3.7'
+alias pycov='pytest --cov=. --cov-report=html;'
+alias upip="pip3 freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
+alias jn="jupyter notebook"
+
+# git
+alias glo='git log --oneline'
+
+# Other aliases
+alias zalias='gvim ~/.zsh_aliases'
+alias e='exit'
+
+# Other tools
+alias k2='~/Documents/k2pdfopt -dev k2 -x -dr 3 -odpi 300 -fc- -w 800 -h 550'
+alias sfix='~/.bin/sfix.sh'
+alias tf2='~/Documents/tf2.py'
+alias 'apt-get'="apt"
+alias 'studio'="studio.sh"
