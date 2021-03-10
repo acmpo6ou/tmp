@@ -2,22 +2,22 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/python/.oh-my-zsh"
+export ZSH="/home/kotlin/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -27,13 +27,13 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -64,11 +64,11 @@ ZSH_THEME="agnoster"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git common-aliases command-not-found vi-mode)
+# plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,37 +97,33 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.zsh_aliases
-
-### Antigen
+#
 source ~/.bin/antigen.zsh
+
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-# antigen bundle github
-
+antigen bundle heroku
 antigen bundle pip
-antigen bundle autopep8
-# antigen bundle django
-
-antigen bundle common-aliases
+antigen bundle lein
 antigen bundle command-not-found
-
-antigen bundle vi-mode
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-# antigen theme agnoster
+antigen theme agnoster
 
 # Tell Antigen that you're done.
 antigen apply
 
-# Custom settings
-DEFAULT_USER=`whoami`
+setopt noautomenu
+setopt nomenucomplete
 
-export PATH=/home/python/Android/Sdk/platform-tools:/home/python/Android/Sdk/tools:/home/python/Android/Sdk/tools/bin:/home/python/android-studio/bin:$PATH
+export DEFAULT_USER="$(whoami)"
+source ~/.zsh_aliases
+export PYTHONPATH="$PYTHONPATH:/home/kotlin/PyQtAccounts/"
+export PATH="/home/kotlin/Android/Sdk/platform-tools:/home/kotlin/Android/Sdk/tools:/home/kotlin/Android/Sdk/tools/bin:/home/kotlin/JetBrains/android-studio/bin:$PATH"
