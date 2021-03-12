@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-source ~/.bin/antigen.zsh
+source ~/Documents/tmp/bin/antigen.zsh
 
 
 # Load the oh-my-zsh's library.
@@ -106,7 +106,6 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
@@ -124,6 +123,7 @@ setopt noautomenu
 setopt nomenucomplete
 
 export DEFAULT_USER="$(whoami)"
-source ~/.zsh_aliases
-export PYTHONPATH="$PYTHONPATH:/home/kotlin/PyQtAccounts/"
-export PATH="/home/kotlin/Android/Sdk/platform-tools:/home/kotlin/Android/Sdk/tools:/home/kotlin/Android/Sdk/tools/bin:/home/kotlin/JetBrains/android-studio/bin:$PATH"
+source ~/Documents/tmp/rc/zsh_aliases
+
+export PYTHONPATH="$PYTHONPATH:/home/$DEFAULT_USER/Documents/PyQtAccounts/"
+export PATH="/home/$DEFAULT_USER/Android/Sdk/platform-tools:/home/$DEFAULT_USER/Android/Sdk/tools:/home/$DEFAULT_USER/Android/Sdk/tools/bin:/home/$DEFAULT_USER/JetBrains/android-studio/bin:$PATH"
