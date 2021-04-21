@@ -122,8 +122,11 @@ antigen apply
 setopt noautomenu
 setopt nomenucomplete
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+source <(binenv completion zsh)
+
 export DEFAULT_USER="$(whoami)"
 source ~/Documents/tmp/rc/zsh_aliases
 
 export PYTHONPATH="$PYTHONPATH:/home/$DEFAULT_USER/Documents/PyQtAccounts/"
-export PATH="/home/$DEFAULT_USER/Android/Sdk/platform-tools:/home/$DEFAULT_USER/Android/Sdk/tools:/home/$DEFAULT_USER/Android/Sdk/tools/bin:/home/$DEFAULT_USER/JetBrains/android-studio/bin:$PATH"
+export PATH="/home/$DEFAULT_USER/.binenv:/home/$DEFAULT_USER/Android/Sdk/platform-tools:/home/$DEFAULT_USER/Android/Sdk/tools:/home/$DEFAULT_USER/Android/Sdk/tools/bin:/home/$DEFAULT_USER/JetBrains/android-studio/bin:$PATH"
