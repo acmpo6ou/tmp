@@ -19,3 +19,4 @@ alias pm='~/Documents/tmp/bin/pm.py'
 
 alias 'apt-get'="apt"
 alias 'studio'="studio.sh"
+alias ls="exa --icons"
