@@ -3,7 +3,9 @@ alias python='python3'
 alias pip='pip3'
 alias py7='python3.7'
 alias pycov='pytest --cov=. --cov-report=html;'
+
 alias jn="jupyter notebook"
+alias ipy="ipython"
 
 # git
 alias glo='git log --oneline'
