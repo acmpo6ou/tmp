@@ -5,6 +5,7 @@ alias py7='python3.7'
 alias pycov='pytest --cov=. --cov-report=html;'
 
 alias jn="jupyter notebook"
+alias py="ptpython"
 alias ipy="ipython"
 
 # git
