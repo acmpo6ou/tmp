@@ -1,7 +1,9 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from numpy.linalg import det, inv
+
+from numpy.linalg import det, inv, eig
+import numpy.linalg as la
 
 
 def input_matrix(data_type=float):
