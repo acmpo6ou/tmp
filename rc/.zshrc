@@ -123,8 +123,6 @@ setopt noautomenu
 setopt nomenucomplete
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-source <(binenv completion zsh)
-
 export DEFAULT_USER="$(whoami)"
 source ~/Documents/tmp/rc/zsh_aliases
 
