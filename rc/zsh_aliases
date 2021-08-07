@@ -19,7 +19,8 @@ alias e='exit'
 alias k2='~/Documents/k2pdfopt -dev k2 -x -dr 3 -odpi 300 -fc- -w 800 -h 550'
 alias sfix='~/Documents/tmp/bin/sfix.sh'
 alias pm='~/Documents/tmp/bin/pm.py'
+alias ls="exa --icons"
+alias nonet="unshare -n -r"
 
 alias 'apt-get'="apt"
 alias 'studio'="studio.sh"
-alias ls="exa --icons"
