@@ -9,7 +9,7 @@ WALLS_DIR = f"{MOD_DIR}/materials/wallpapers/"
 WALL_PATH = f"{MOD_DIR}/materials/console/background_classic.vtf"
 
 num_walls = len(os.listdir(WALLS_DIR))
-nums = range(1, num_walls+1)
+nums = range(1, num_walls) # note: we need to exclude .gitignore
 wall = random.choice(nums)
 
 os.remove(WALL_PATH)
