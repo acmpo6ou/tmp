@@ -12,5 +12,6 @@ num_walls = len(os.listdir(WALLS_DIR))
 nums = range(1, num_walls) # note: we need to exclude .gitignore
 wall = random.choice(nums)
 
-os.remove(WALL_PATH)
+if os.path.exists(WALL_PATH):
+    os.remove(WALL_PATH)
 os.symlink(f"{WALLS_DIR}/{wall}.vtf", WALL_PATH)
