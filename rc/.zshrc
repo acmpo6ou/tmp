@@ -122,7 +122,6 @@ antigen apply
 setopt noautomenu
 setopt nomenucomplete
 
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 export DEFAULT_USER="$(whoami)"
 source ~/Documents/tmp/rc/zsh_aliases
 
