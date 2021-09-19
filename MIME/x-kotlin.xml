@@ -4,5 +4,6 @@
         <comment>Kotlin source code</comment>
         <glob pattern="*.kt"/>
         <generic-icon name="x-kotlin"/>
+        <sub-class-of type="text/plain"/>
     </mime-type>
 </mime-info>
