@@ -12,7 +12,7 @@ alias ipy="ipython"
 alias glo='git log --oneline'
 
 # Other aliases
-alias zalias='gvim ~/Documents/tmp/rc/zsh_aliases'
+alias zalias='vim ~/Documents/tmp/rc/zsh_aliases'
 alias e='exit'
 
 # Other tools
