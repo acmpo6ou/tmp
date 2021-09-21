@@ -13,6 +13,7 @@ alias glo='git log --oneline'
 
 # Other aliases
 alias zalias='vim ~/Documents/tmp/rc/zsh_aliases'
+alias tango="~/Documents/tmp/bin/tango.py"
 alias e='exit'
 
 # Other tools
