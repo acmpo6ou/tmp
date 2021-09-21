@@ -170,14 +170,6 @@ map <F2> :TaskList<CR> 	   " отобразить список тасков на
 " Работа буфферами
 map <C-q> :bd<CR> 	   " CTRL+Q - закрыть текущий буффер
 
-"=====================================================
-" User hotkeys
-"=====================================================
-" ConqueTerm
-" запуск интерпретатора на F5
-nnoremap <F5> :ConqueTermSplit python<CR>
-" а debug-mode на <F6>
-nnoremap <F6> :exe "ConqueTermSplit python " . expand("%")<CR>
 let g:ConqueTerm_StartMessages = 0
 let g:ConqueTerm_CloseOnEnd = 0
 " проверка кода в соответствии с PEP8 через <leader>8
