@@ -33,7 +33,6 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'vim-scripts/argtextobj.vim'
-Plugin 'goerz/jupytext.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " my plugins settings
@@ -113,8 +112,6 @@ if has("gui_running")
   set cursorline
 endif
 set ttyfast
-
-" включить подсветку кода
 syntax on
 
 tab sball
@@ -133,21 +130,11 @@ set nu	             " показывать номера строк
 set scrolloff=5	     " 5 строк при скролле за раз
 
 " прячем панельки
-"set guioptions-=m   " меню
 set guioptions-=T    " тулбар
-"set guioptions-=r   "  скроллбары
 
 " настройка на Tab
 set smarttab
 set tabstop=8
-
-" при переходе за границу в 80 символов в Ruby/Python/js/C/C++ подсвечиваем на темном фоне текст
-"augroup vimrc_autocmds
-"    autocmd!
-"    autocmd FileType ruby,python,javascript,c,cpp highlight Excess ctermbg=DarkGrey guibg=Black
-"    autocmd FileType ruby,python,javascript,c,cpp match Excess /\%80v.*/
-"    autocmd FileType ruby,python,javascript,c,cpp set nowrap
-"augroup END
 
 " указываем каталог с настройками SnipMate
 let g:snippets_dir = "~/.vim/vim-snippets/snippets"
@@ -163,9 +150,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 map <F3> :NERDTreeToggle<CR>
 "игноррируемые файлы с расширениями
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
-
-" TaskList настройки
-map <F2> :TaskList<CR> 	   " отобразить список тасков на F2
 
 " Работа буфферами
 map <C-q> :bd<CR> 	   " CTRL+Q - закрыть текущий буффер
@@ -183,7 +167,6 @@ nnoremap <leader>Th :set ft=htmljinja<CR>
 nnoremap <leader>Tp :set ft=python<CR>
 nnoremap <leader>Tj :set ft=javascript<CR>
 nnoremap <leader>Tc :set ft=css<CR>
-nnoremap <leader>Td :set ft=django<CR>
 
 "=====================================================
 " Languages support
