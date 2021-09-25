@@ -7,6 +7,9 @@ set ReplaceWithRegister
 set argtextobj
 set exchange
 set textobj-entire
+set NERDTree
+set vim-paragraph-motion
+set textobj-indent
 
 filetype on
 filetype plugin on
