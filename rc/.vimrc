@@ -213,6 +213,10 @@ let g:rainbow_active = 1
 
 se hidden
 
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+
 let profile = system('dconf list /org/gnome/terminal/legacy/profiles:/')[:-2]
 
 function SolarizedTheme()
