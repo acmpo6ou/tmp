@@ -19,7 +19,6 @@ set incsearch
 set hlsearch
 set ideajoin
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " my settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,6 +27,11 @@ nnoremap 2O O<Esc>O
 
 nnoremap [<Space> mpO<Esc>`p
 nnoremap ]<Space> mpo<Esc>`p
+
+nnoremap <C-k> :move -2<CR>
+nnoremap <C-j> :move +<CR>
+nnoremap <C-h> xhP
+nnoremap <C-l> xp
 
 " move tabs
 nnoremap tm :tabm +1<CR>
