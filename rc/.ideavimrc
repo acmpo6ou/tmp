@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 " Plugins
 set surround
@@ -15,8 +15,8 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
-set incsearch	     " инкреминтируемый поиск
-set hlsearch	     " подсветка результатов поиска
+set incsearch
+set hlsearch
 set ideajoin
 
 
@@ -36,4 +36,3 @@ nnoremap tM :tabm -1<CR>
 " goto definition
 nmap g[ :action GotoImplementation<CR>
 
-noh
