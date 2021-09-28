@@ -33,6 +33,8 @@ nnoremap <C-j> :move +<CR>
 nnoremap <C-h> xhP
 nnoremap <C-l> xp
 
+nnoremap <leader>n /sldfjlsdjfsd<CR>
+
 " move tabs
 nnoremap tm :tabm +1<CR>
 nnoremap tM :tabm -1<CR>
