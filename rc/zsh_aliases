@@ -1,9 +1,5 @@
 # Python aliases
-alias python='python3'
-alias pip='python3 -m pip'
-alias py7='python3.7'
 alias pycov='pytest --cov=. --cov-report=html;'
-
 alias jn="jupyter notebook"
 alias py="python"
 alias ipy="ipython"
@@ -13,6 +9,7 @@ alias glo='git log --oneline'
 
 # Other aliases
 alias zalias='vim ~/Documents/tmp/rc/zsh_aliases'
+alias zrc='vim ~/.zshrc'
 alias tango="~/Documents/tmp/bin/tango.py"
 alias e='exit'
 
