@@ -119,6 +119,20 @@ antigen theme agnoster
 # Tell Antigen that you're done.
 antigen apply
 
+# Load PIP completion.
+if (( $+commands[pip] )); then
+  cache_file="$HOME/.cache.zsh"
+
+  if [[ "$commands[pip]" -nt "$cache_file" || ! -s "$cache_file" ]]; then
+    # pip is slow; cache its output. And also support 'pip3' variant
+    pip completion --zsh | sed -e "s|compctl -K [-_[:alnum:]]* pip|& pip3|" >! "$cache_file" 2> /dev/null
+  fi
+
+  source "$cache_file"
+
+  unset cache_file
+fi
+
 setopt noautomenu
 setopt nomenucomplete
 
