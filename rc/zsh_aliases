@@ -20,5 +20,9 @@ alias pm='~/Documents/tmp/bin/pm.py'
 alias ls="exa --icons"
 alias nonet="unshare -n -r"
 
+flacue() {
+    metaflac --import-cuesheet-from="$1.cue" --set-tag-from-file="CUESHEET=$1.cue" "$1.flac"
+}
+
 alias 'apt-get'="apt"
 alias 'studio'="studio.sh"
