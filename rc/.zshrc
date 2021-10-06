@@ -140,4 +140,6 @@ export DEFAULT_USER="$(whoami)"
 source ~/Documents/tmp/rc/zsh_aliases
 
 export PYTHONPATH="$PYTHONPATH:/home/$DEFAULT_USER/Documents/PyQtAccounts/"
+export PYTHONSTARTUP=$HOME/Documents/tmp/rc/py-startup.py
+
 export PATH="/home/$DEFAULT_USER/.binenv:/home/$DEFAULT_USER/Android/Sdk/platform-tools:/home/$DEFAULT_USER/Android/Sdk/tools:/home/$DEFAULT_USER/Android/Sdk/tools/bin:/home/$DEFAULT_USER/JetBrains/android-studio/bin:$PATH"
