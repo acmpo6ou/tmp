@@ -20,8 +20,23 @@ alias pm='~/Documents/tmp/bin/pm.py'
 alias ls="exa --icons"
 alias nonet="unshare -n -r"
 
+# Functions
 flacue() {
     metaflac --import-cuesheet-from="$1.cue" --set-tag-from-file="CUESHEET=$1.cue" "$1.flac"
+}
+
+venv() {
+    if [ -d $1 ]; then
+        cd $1
+        source bin/activate
+    else
+        python3 -m venv $1
+        cd $1
+        source bin/activate
+        pip install -U pip
+        pip install -U setuptools
+        pip install -U wheel
+    fi
 }
 
 alias 'apt-get'="apt"
