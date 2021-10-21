@@ -135,6 +135,7 @@ fi
 
 setopt noautomenu
 setopt nomenucomplete
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
 
 export DEFAULT_USER="$(whoami)"
 source ~/Documents/tmp/rc/zsh_aliases
