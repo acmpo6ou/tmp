@@ -112,7 +112,7 @@ if has("gui_running")
   set cursorline
 endif
 set ttyfast
-syntax on
+
 
 tab sball
 set switchbuf=useopen
@@ -129,6 +129,7 @@ set hlsearch	     " подсветка результатов поиска
 set nu	             " показывать номера строк
 set scrolloff=5	     " 5 строк при скролле за раз
 
+syntax on
 " прячем панельки
 set guioptions-=T    " тулбар
 
