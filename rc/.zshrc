@@ -137,6 +137,9 @@ setopt noautomenu
 setopt nomenucomplete
 zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
 
+export DEBFULLNAME="Astro Boy"
+export DEBEMAIL="acmpo6ou@gmail.com"
+
 export DEFAULT_USER="$(whoami)"
 source ~/Documents/tmp/rc/zsh_aliases
 
