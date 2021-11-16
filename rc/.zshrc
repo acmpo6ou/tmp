@@ -137,6 +137,8 @@ setopt noautomenu
 setopt nomenucomplete
 zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
 
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/docker.sock"
+
 export DEBFULLNAME="Astro Boy"
 export DEBEMAIL="acmpo6ou@gmail.com"
 
