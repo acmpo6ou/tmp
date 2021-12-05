@@ -33,6 +33,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'vim-scripts/argtextobj.vim'
+Plugin 'michaeljsmith/vim-indent-object'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " my plugins settings
