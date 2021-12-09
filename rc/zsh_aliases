@@ -1,8 +1,11 @@
 # Python aliases
 alias pycov='pytest --cov=. --cov-report=html;'
-alias jn="jupyter notebook"
-alias py="python"
-alias ipy="ipython"
+
+alias py="python3.9"
+alias python="python3.9"
+alias python3="python3.9"
+alias pip="pip3.9"
+alias pip3="pip3.9"
 
 # git
 alias glo='git log --oneline'
@@ -31,7 +34,7 @@ venv() {
         cd $1
         source bin/activate
     else
-        python3 -m venv $1
+        python3.9 -m venv $1
         cd $1
         source bin/activate
         pip install -U pip
