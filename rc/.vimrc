@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'		" let Vundle manage Vundle, required
 
 " color scheme
 Plugin 'altercation/solarized'
+Plugin 'acmpo6ou/vim-emoji-ab'
 
 " my plugins
 Plugin 'tpope/vim-eunuch'
@@ -98,6 +99,8 @@ call vundle#end()            		" required
 filetype on
 filetype plugin on
 filetype plugin indent on
+
+runtime macros/emoji-ab.vim
 
 "=====================================================
 " General settings
