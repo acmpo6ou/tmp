@@ -9,20 +9,23 @@ alias pip3="pip3.9"
 
 # git
 alias glo='git log --oneline'
+alias gs='git status'
 
 # Other aliases
 alias zalias='vim ~/Documents/tmp/rc/zsh_aliases'
 alias zrc='vim ~/.zshrc'
-alias gs='git status'
+
 alias tango="~/Documents/tmp/bin/tango.py"
 alias e='exit'
+
+alias ls="exa --icons"
+alias nonet="unshare -n -r"
 
 # Other tools
 alias k2='~/Documents/k2pdfopt -dev k2 -x -dr 3 -odpi 300 -fc- -w 800 -h 550'
 alias sfix='~/Documents/tmp/bin/sfix.sh'
 alias pm='~/Documents/tmp/bin/pm.py'
-alias ls="exa --icons"
-alias nonet="unshare -n -r"
+alias cover='~/Documents/tmp/bin/cover.py'
 
 # Functions
 flacue() {
