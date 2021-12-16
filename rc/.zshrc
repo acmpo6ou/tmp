@@ -109,6 +109,8 @@ antigen bundle git
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle colored-man-pages
+antigen bundle colorize
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -132,6 +134,8 @@ if (( $+commands[pip] )); then
 
   unset cache_file
 fi
+
+export ZSH_COLORIZE_STYLE="native"
 
 setopt noautomenu
 setopt nomenucomplete
