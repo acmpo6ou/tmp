@@ -111,6 +111,7 @@ antigen bundle lein
 antigen bundle command-not-found
 antigen bundle colored-man-pages
 antigen bundle colorize
+antigen bundle pip
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
