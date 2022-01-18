@@ -45,5 +45,9 @@ venv() {
     fi
 }
 
+adba() {
+    adb push $1 "/storage/emulated/0/Audio/"
+}
+
 alias 'apt-get'="apt"
 alias 'studio'="studio.sh"
