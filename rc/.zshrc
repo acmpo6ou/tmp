@@ -68,7 +68,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git)
+plugins=(pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,11 +107,9 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle pip
-antigen bundle lein
 antigen bundle command-not-found
 antigen bundle colored-man-pages
 antigen bundle colorize
-antigen bundle pip
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -121,20 +119,6 @@ antigen theme agnoster
 
 # Tell Antigen that you're done.
 antigen apply
-
-# Load PIP completion.
-if (( $+commands[pip] )); then
-  cache_file="$HOME/.cache.zsh"
-
-  if [[ "$commands[pip]" -nt "$cache_file" || ! -s "$cache_file" ]]; then
-    # pip is slow; cache its output. And also support 'pip3' variant
-    pip completion --zsh | sed -e "s|compctl -K [-_[:alnum:]]* pip|& pip3|" >! "$cache_file" 2> /dev/null
-  fi
-
-  source "$cache_file"
-
-  unset cache_file
-fi
 
 export ZSH_COLORIZE_STYLE="native"
 
