@@ -212,6 +212,7 @@ set wrap linebreak nolist
 nnoremap <F4> :tabe ~/.vimrc<CR>:tabm 0<CR>
 set dictionary=/usr/share/dict/words
 set spell
+set spelllang=en_us
 
 let g:jedi#goto_definitions_command = "<localleader>gg"
 let g:rainbow_active = 1
