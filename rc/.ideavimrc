@@ -25,6 +25,9 @@ set ideajoin
 nnoremap 2o o<CR>
 nnoremap 2O O<Esc>O
 
+nnoremap 3o o<CR><CR>
+nnoremap 3O O<Esc>O<Esc>O
+
 nnoremap [<Space> mpO<Esc>`p
 nnoremap ]<Space> mpo<Esc>`p
 
