@@ -51,3 +51,4 @@ adba() {
 
 alias 'apt-get'="apt"
 alias 'studio'="studio.sh"
+alias 'srlog'="command cat /var/log/syslog | grep 'systemd-sleep' | grep \"Suspending\|resumed\""
