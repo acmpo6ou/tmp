@@ -21,9 +21,7 @@ for i in range(30):
 
     # screenshot transits
     screenshot_fullscreen = ImageGrab.grab()
-    screen_part = screenshot_fullscreen.getdata()
-    numpy_array = np.array(screen_part)[10:335, 412:425]
-    print(len(numpy_array))
+    screen_part = screenshot_fullscreen.crop((10, 412, 335, 425))
 
     # save image
     screen_part.save("test.png")
