@@ -14,10 +14,7 @@ import numpy as np
 time.sleep(3)
 
 for i in range(30):
-    # точние аспекти
-    pyautogui.moveTo(45, 965)
-    time.sleep(0.1)
-    pyautogui.click()
+    pyautogui.click("img/precise_aspects.png")
 
     # screenshot transits
     screenshot_fullscreen = ImageGrab.grab()
