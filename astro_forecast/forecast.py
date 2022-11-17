@@ -11,7 +11,7 @@ import pyautogui
 import sys
 import numpy as np
 
-# time.sleep(3)
+time.sleep(3)
 
 for i in range(30):
     # точние аспекти
@@ -22,7 +22,11 @@ for i in range(30):
     # screenshot transits
     screenshot_fullscreen = ImageGrab.grab()
     screen_part = screenshot_fullscreen.crop((10, 412, 335, 425))
+    screen_part.save(f"part-{i}.png")
 
-    # save image
-    screen_part.save("test.png")
+    # +1 day
+    pyautogui.moveTo(30, 700)
+    time.sleep(0.1)
+    pyautogui.click()
+
     break
