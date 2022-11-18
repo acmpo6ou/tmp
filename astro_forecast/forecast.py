@@ -18,6 +18,12 @@ def waitFor(src):
     pyautogui.click(src)
 
 
+print("1. Запусти Неву")
+print("2. Прогнозування")
+print("3. Транзити")
+print("Чекаю...")
+
+
 # TODO: make a cli argument for day num
 for i in range(30):
     waitFor("img/precise_aspects.png")
