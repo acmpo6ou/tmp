@@ -11,19 +11,21 @@ import pyautogui
 import sys
 import numpy as np
 
+# TODO: remove this
 time.sleep(3)
 
 for i in range(30):
+    # TODO: wait for image
     pyautogui.click("img/precise_aspects.png")
+
+    money_location = pyautogui.locateOnScreen("img/money.png")
+    x = money_location.left
+    y = money_location.top + money_location.height
 
     # screenshot transits
     screenshot_fullscreen = ImageGrab.grab()
-    screen_part = screenshot_fullscreen.crop((10, 412, 335, 425))
+    screen_part = screenshot_fullscreen.crop((x, y, x + 400, y + 25))
     screen_part.save(f"part-{i}.png")
 
-    # +1 day
-    pyautogui.moveTo(30, 700)
-    time.sleep(0.1)
-    pyautogui.click()
-
+    pyautogui.click("img/plus_1_day.png")
     break
