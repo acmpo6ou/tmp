@@ -10,12 +10,20 @@ import time
 import pyautogui
 import sys
 import numpy as np
+import datetime
+
+DAYS = 3
+SCREENSHOT_WIDTH = 350
+SCREENSHOT_HIGHT = 25
 
 
 def waitFor(src):
     while not pyautogui.locateOnScreen(src):
-        time.sleep(0.1)
+        pass
     pyautogui.click(src)
+
+
+# TODO: clean screenshot dir
 
 
 print("1. Запусти Неву")
@@ -25,8 +33,11 @@ print("Чекаю...")
 
 
 # TODO: make a cli argument for day num
-for i in range(30):
+for i in range(DAYS):
     waitFor("img/precise_aspects.png")
+
+    # move mouse out of the way not to mess up the screenshot
+    pyautogui.moveTo(100, 100)
 
     # locate screenshot beginning
     money_location = pyautogui.locateOnScreen("img/money.png")
@@ -35,7 +46,22 @@ for i in range(30):
 
     # screenshot transits
     screenshot_fullscreen = ImageGrab.grab()
-    screen_part = screenshot_fullscreen.crop((x, y, x + 400, y + 25))
-    screen_part.save(f"part-{i}.png")
+    screen_part = screenshot_fullscreen.crop(
+        (x, y, x + SCREENSHOT_WIDTH, y + SCREENSHOT_HIGHT)
+    )
+    screen_part.save(f"screenshots/part-{i}.png")
 
     waitFor("img/plus_1_day.png")
+
+images = [Image.open(f"screenshots/part-{i}.png") for i in range(DAYS)]
+# TODO: add header to the table
+#   as well as day numbers
+merged_img = Image.new(images[0].mode, (SCREENSHOT_WIDTH, DAYS * SCREENSHOT_HIGHT))
+
+y = 0
+for img in images:
+    merged_img.paste(img, (0, y))
+    y += img.height
+
+today = datetime.date.today()
+merged_img.save(f"forecast-{today.strftime('%B')}.png")
