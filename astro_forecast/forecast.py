@@ -4,16 +4,12 @@
 pip install PyUserInput pyautogui pillow numpy
 """
 import calendar
-
-from PIL import Image, ImageGrab, ImageDraw
-from pymouse import PyMouse
-import time
-import pyautogui
-import sys
-import numpy as np
 import datetime
 
-DAYS = 3
+import pyautogui
+from PIL import Image, ImageGrab, ImageDraw, ImageFont
+
+DAYS = 2
 SCREENSHOT_WIDTH = 350
 SCREENSHOT_HEIGHT = 25
 DAYS_NUMS_WIDTH = 50
@@ -55,23 +51,34 @@ for i in range(DAYS):
 
     waitFor("img/plus_1_day.png")
 
-images = [Image.open(f"screenshots/part-{i}.png") for i in range(DAYS)]
+images = (Image.open(f"screenshots/part-{i}.png") for i in range(DAYS))
 # TODO: add header to the table, as well as day numbers
 merged_img = Image.new(
-    images[0].mode,
+    "RGB",
     (SCREENSHOT_WIDTH + DAYS_NUMS_WIDTH, DAYS * SCREENSHOT_HEIGHT),
 )
-
-y = 0
-for img in images:
-    merged_img.paste(img, (DAYS_NUMS_WIDTH, y))
-    y += img.height
-
 draw = ImageDraw.Draw(merged_img)
-month = calendar.monthcalendar()
-for week in month:
-    for day in week:
-        draw.text((5, 5), "Sample Text", (255, 255, 255))
+font = ImageFont.truetype("Ubuntu-Nerd.ttf", 12)
 
 today = datetime.date.today()
+month = calendar.monthcalendar(today.year, today.month)
+y = 0
+
+for week in month:
+    for day in week:
+        if not day:
+            continue
+
+        day_name = datetime.datetime(today.year, today.month, day).strftime("%a")
+        day_num = f"{day:02} {day_name}"
+        try:
+            img = next(images)
+        except StopIteration:
+            break
+
+        draw.text((5, y + 5), day_num, (255, 255, 255), font=font)
+        merged_img.paste(img, (DAYS_NUMS_WIDTH, y))
+        y += SCREENSHOT_HEIGHT
+    y += SCREENSHOT_HEIGHT
+
 merged_img.save(f"forecast-{today.strftime('%B')}.png")
