@@ -5,6 +5,8 @@ pip install PyUserInput pyautogui pillow numpy
 """
 import calendar
 import datetime
+import shutil
+from pathlib import Path
 
 import pyautogui
 from PIL import Image, ImageGrab, ImageDraw, ImageFont
@@ -24,17 +26,15 @@ def waitFor(src):
     pyautogui.click(src)
 
 
-# TODO: clean screenshot dir
-
+shutil.rmtree("screenshots")
+Path("screenshots").mkdir()
 
 print("1. Запусти Неву")
 print("2. Прогнозування")
 print("3. Транзити")
 print("Чекаю...")
 
-# TODO: make a cli argument for day num
 for i in range(DAYS):
-    break
     waitFor("img/precise_aspects.png")
 
     # move mouse out of the way not to mess up the screenshot
