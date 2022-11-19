@@ -29,7 +29,6 @@ print("2. Прогнозування")
 print("3. Транзити")
 print("Чекаю...")
 
-
 # TODO: make a cli argument for day num
 for i in range(DAYS):
     waitFor("img/precise_aspects.png")
@@ -53,15 +52,17 @@ for i in range(DAYS):
 
 images = (Image.open(f"screenshots/part-{i}.png") for i in range(DAYS))
 # TODO: add header to the table, as well as day numbers
-merged_img = Image.new(
-    "RGB",
-    (SCREENSHOT_WIDTH + DAYS_NUMS_WIDTH, DAYS * SCREENSHOT_HEIGHT),
-)
-draw = ImageDraw.Draw(merged_img)
-font = ImageFont.truetype("Ubuntu-Nerd.ttf", 12)
 
 today = datetime.date.today()
 month = calendar.monthcalendar(today.year, today.month)
+num_week_separators = len(month) - 1
+
+width = SCREENSHOT_WIDTH + DAYS_NUMS_WIDTH
+height = (DAYS + num_week_separators) * SCREENSHOT_HEIGHT
+merged_img = Image.new("RGB", (width, height))
+
+draw = ImageDraw.Draw(merged_img)
+font = ImageFont.truetype("Ubuntu-Nerd.ttf", 12)
 y = 0
 
 for week in month:
