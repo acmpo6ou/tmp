@@ -1,11 +1,11 @@
 # Python aliases
 alias pycov='pytest --cov=. --cov-report=html;'
 
-alias py="python3.9"
-alias python="python3.9"
-alias python3="python3.9"
-alias pip="python3.9 -m pip"
-alias pip3="python3.9 -m pip"
+alias py="python3.10"
+alias python="python3.10"
+alias python3="python3.10"
+alias pip="python3.10 -m pip"
+alias pip3="python3.10 -m pip"
 
 # git
 alias glo='git log --oneline'
