@@ -5,14 +5,20 @@ rules:
     condition: args.equals(args2)
     replacement: ${func}
     tests:
-      - match: "f2(lambda: f())"
-        expect: "f2(f)"
       - match: "f2(lambda x: f(x))"
         expect: "f2(f)"
       - match: "f2(..., lambda x: f(x))"
         expect: "f2(..., f)"
       - match: "f2(..., lambda x: f3(x))"
         expect: "f2(..., f3)"
-      - match: "f2(..., lambda x, y: f(x, y))"
+
+  - id: simplify-lambda-no-args
+    pattern: "lambda: ${func}()"
+    description: "Use `${func}` instead of `lambda: ${func}()`"
+    replacement: ${func}
+    tests:
+      - match: "f2(lambda: f())"
+        expect: "f2(f)"
+      - no-match: "f2(lambda: f(x))"
+      - match: "f2(..., lambda: f())"
         expect: "f2(..., f)"
-      - no-match: "f2(..., lambda x, y: f(x))"
