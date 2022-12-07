@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
 
 """
-pip install PyUserInput pyautogui pillow numpy
+pip install PyUserInput pyautogui pillow numpy python-dateutil
 """
 import calendar
 import datetime
 import shutil
+import sys
 from pathlib import Path
 
 import pyautogui
 from PIL import Image, ImageGrab, ImageDraw, ImageFont
+from dateutil.relativedelta import relativedelta
 
-today = datetime.date.today()
-month = calendar.monthcalendar(today.year, today.month)
-DAYS = calendar.monthrange(today.year, today.month)[1]
+if len(sys.argv) < 2 or sys.argv[1] not in ("--current", "--next"):
+    print("Вкажи --current або --next для теперішнього або наступного місяця.")
+    sys.exit()
+
+month = datetime.date.today()
+if sys.argv[1] == "--next":
+    month += relativedelta(months=1)
+
+month_range = calendar.monthcalendar(month.year, month.month)
+DAYS = calendar.monthrange(month.year, month.month)[1]
 
 SCREENSHOT_WIDTH = 350
 SCREENSHOT_HEIGHT = 25
@@ -54,9 +63,7 @@ for i in range(DAYS):
 
     waitFor("img/plus_1_day.png")
 
-# TODO: add header to the table, as well as day numbers
-
-num_week_separators = len(month) - 1
+num_week_separators = len(month_range) - 1
 width = SCREENSHOT_WIDTH + DAYS_NUMS_WIDTH
 height = (DAYS + num_week_separators) * SCREENSHOT_HEIGHT
 merged_img = Image.new("RGB", (width, height))
@@ -66,12 +73,12 @@ font = ImageFont.truetype("Ubuntu-Nerd.ttf", 12)
 images = (Image.open(f"screenshots/part-{i}.png") for i in range(DAYS))
 y = 0
 
-for week in month:
+for week in month_range:
     for day in week:
         if not day:
             continue
 
-        day_name = datetime.datetime(today.year, today.month, day).strftime("%a")
+        day_name = datetime.datetime(month.year, month.month, day).strftime("%a")
         day_num = f"{day:02} {day_name}"
         try:
             img = next(images)
@@ -83,4 +90,4 @@ for week in month:
         y += SCREENSHOT_HEIGHT
     y += SCREENSHOT_HEIGHT
 
-merged_img.save(f"forecast-{today.strftime('%B')}.png")
+merged_img.save(f"forecast-{month.strftime('%B')}.png")
