@@ -5,9 +5,9 @@ pip install PyUserInput pyautogui pillow numpy python-dateutil
 """
 import calendar
 import datetime
-import shutil
+import glob
+import os
 import sys
-from pathlib import Path
 
 import pyautogui
 from PIL import Image, ImageGrab, ImageDraw, ImageFont
@@ -35,8 +35,8 @@ def waitFor(src):
     pyautogui.click(src)
 
 
-shutil.rmtree("screenshots")
-Path("screenshots").mkdir()
+for file in glob.glob("screenshots/*.png"):
+    os.remove(file)
 
 print("1. Запусти Неву")
 print("2. Прогнозування")
