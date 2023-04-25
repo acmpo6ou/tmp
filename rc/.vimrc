@@ -222,6 +222,7 @@ se hidden
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
+set mouse=niv
 
 let profile = system('dconf list /org/gnome/terminal/legacy/profiles:/')[:-2]
 
@@ -240,7 +241,9 @@ function RefreshSolirized()
   redraw!
 endfunction
 
-call SolarizedTheme()
+if !has("macunix")
+  call SolarizedTheme()
+endif
 nnoremap <F7> :call RefreshSolirized()<CR>
 autocmd VimLeave * call TangoTheme()
 autocmd VimSuspend * call TangoTheme()

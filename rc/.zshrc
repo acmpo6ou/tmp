@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$(whoami)/.oh-my-zsh"
+export ZSH="/$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# For a full list of active aliases, run alias.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -147,7 +147,8 @@ export DEBEMAIL="acmpo6ou@gmail.com"
 export DEFAULT_USER="$(whoami)"
 source ~/Documents/tmp/rc/zsh_aliases
 
-export PYTHONPATH="$PYTHONPATH:/home/$DEFAULT_USER/Documents/PyQtAccounts/"
+export PYTHONPATH="$PYTHONPATH:$HOME/Documents/PyQtAccounts/"
 export PYTHONSTARTUP=$HOME/Documents/tmp/rc/py-startup.py
+export PYTHONPYCACHEPREFIX=~/.pycache
 
-export PATH="/home/$DEFAULT_USER/.platform-tools:/$HOME/.bin:/home/$DEFAULT_USER/Android/Sdk/platform-tools:/home/$DEFAULT_USER/Android/Sdk/tools:/home/$DEFAULT_USER/Android/Sdk/tools/bin:/home/$DEFAULT_USER/JetBrains/android-studio/bin:/home/$DEFAULT_USER/.local/bin:$PATH"
+export PATH="$HOME/.platform-tools:/$HOME/.bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/tools/bin:$HOME/JetBrains/android-studio/bin:$HOME/.local/bin:$PATH"
