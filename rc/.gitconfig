@@ -3,3 +3,5 @@
 	name = acmpo6ou
 [credential]
 	helper = cache
+[init]
+	defaultBranch = master
