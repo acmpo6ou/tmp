@@ -39,10 +39,11 @@ flacue() {
 venv() {
     if [ -d $1 ]; then
         source "$1/bin/activate"
+        pip install -U pip setuptools rich
     else
         virtualenv $1
         source "$1/bin/activate"
-        pip install -U rich
+        pip install -U pip setuptools rich
     fi
 }
 
