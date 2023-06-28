@@ -47,6 +47,18 @@ venv() {
     fi
 }
 
+git() {
+    if [ "$1" = "reset" ] && [ "$2" = "--hard" ] ; then
+        echo "are you being a moron again? [Yes/no]"
+        read i
+        if [ "$i" = "no" ]; then
+             command git $@
+        fi
+     else
+         command git $@
+     fi
+}
+
 adba() {
     adb push $1 "/storage/emulated/0/Audio/"
 }
