@@ -36,9 +36,7 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'michaeljsmith/vim-indent-object'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" my plugins settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""" my plugins settings
 
 " move
 let g:move_key_modifier = 'C'
@@ -58,7 +56,7 @@ let g:snipMate = { 'snippet_version' : 1 }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " my settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap 2o o<CR>
+nmap 2o o<CR>
 nnoremap 2O O<Esc>O
 
 " move tabs
