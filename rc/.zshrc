@@ -152,3 +152,7 @@ export PYTHONSTARTUP=$HOME/Documents/tmp/rc/py-startup.py
 export PYTHONPYCACHEPREFIX=~/.pycache
 
 export PATH="$HOME/.platform-tools:/$HOME/.bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/tools/bin:$HOME/JetBrains/android-studio/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/tools/bin:$PATH"
+
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
