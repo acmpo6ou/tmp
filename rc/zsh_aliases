@@ -49,9 +49,9 @@ venv() {
 
 git() {
     if [ "$1" = "reset" ] && [ "$2" = "--hard" ] ; then
-        echo "are you being a moron again? [Yes/no]"
+        echo "are you being a moron again? [Y/n]"
         read i
-        if [ "$i" = "no" ]; then
+        if [ "$i" = "n" ]; then
              command git $@
         fi
      else
