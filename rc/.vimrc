@@ -217,7 +217,7 @@ let g:rainbow_active = 1
 
 se hidden
 
-set keymap=russian-jcukenwin
+set keymap=ukrainian-jcuken
 set iminsert=0
 set imsearch=0
 set mouse=niv
