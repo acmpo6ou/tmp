@@ -35,6 +35,7 @@ Plugin 'kana/vim-textobj-entire'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'maxboisvert/vim-simple-complete'
 
 """""" my plugins settings
 
@@ -248,3 +249,7 @@ autocmd VimLeave * call TangoTheme()
 autocmd VimSuspend * call TangoTheme()
 autocmd VimResume * call SolarizedTheme()
 
+set completeopt-=menuone
+set complete+=k
+set complete-=t
+set complete-=i
