@@ -5,3 +5,5 @@
 	helper = cache
 [init]
 	defaultBranch = master
+[core]
+	editor = vim
