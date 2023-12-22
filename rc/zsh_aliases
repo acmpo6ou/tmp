@@ -18,7 +18,7 @@ alias zrc='vim ~/.zshrc'
 alias tango="~/Documents/tmp/bin/tango.py"
 alias e='exit'
 
-alias rm=rip
+alias rm=trash
 alias ls="exa --icons"
 alias nonet="unshare -n -r"
 
