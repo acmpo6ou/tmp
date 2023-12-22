@@ -20,6 +20,7 @@ services:
       - ./docker-data/dms/mail-logs/:/var/log/mail/
       - ./docker-data/dms/config/:/tmp/docker-mailserver/
       - /etc/localtime:/etc/localtime:ro
+      - ./docker-data/dms/config/dovecot/15-mailboxes.conf:/home/blueberry/docker-mailserver/15-mailboxes.conf
     restart: always
     stop_grace_period: 1m
     # Uncomment if using `ENABLE_FAIL2BAN=1`:
