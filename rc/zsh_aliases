@@ -63,6 +63,7 @@ adba() {
     adb push $1 "/storage/emulated/0/Audio/"
 }
 
-alias 'apt-get'="apt"
+alias 'apt-get'="sudo apt"
+alias 'apt'="sudo apt"
 alias 'studio'="studio.sh"
 alias 'srlog'="command cat /var/log/syslog | grep 'systemd-sleep' | grep \"Suspending\|resumed\""
