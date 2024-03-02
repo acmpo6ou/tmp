@@ -1,11 +1,9 @@
 # Python aliases
 alias pycov='pytest --cov=. --cov-report=html;'
 
-alias py="python3.10"
-alias python="python3.10"
-alias python3="python3.10"
-alias pip="python3.10 -m pip"
-alias pip3="python3.10 -m pip"
+alias py="python3"
+alias pip="uv"
+alias pip3="uv"
 
 # git
 alias glo='git log --oneline'
@@ -25,28 +23,19 @@ alias nonet="unshare -n -r"
 alias cat=ccat
 alias less=cless
 
-# Other tools
-alias sfix='~/Documents/tmp/bin/sfix.sh'
-alias pm='~/Documents/tmp/bin/pm.py'
-alias cover='~/Documents/tmp/bin/cover.py'
-
 # Functions
 mcd() {
     mkdir "$1" && cd "$1"
 }
 
-flacue() {
-    metaflac --import-cuesheet-from="$1.cue" --set-tag-from-file="CUESHEET=$1.cue" "$1.flac"
-}
-
 venv() {
     if [ -d $1 ]; then
         source "$1/bin/activate"
-        pip install -U pip setuptools rich
+        uv install -U pip setuptools rich
     else
         virtualenv $1
         source "$1/bin/activate"
-        pip install -U pip setuptools rich
+        uv install -U pip setuptools rich
     fi
 }
 
@@ -60,10 +49,6 @@ git() {
      else
          command git $@
      fi
-}
-
-adba() {
-    adb push $1 "/storage/emulated/0/Audio/"
 }
 
 alias 'apt-get'="sudo apt"
