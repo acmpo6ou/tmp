@@ -2,8 +2,7 @@
 alias pycov='pytest --cov=. --cov-report=html;'
 
 alias py="python3"
-alias pip="uv"
-alias pip3="uv"
+alias pip="uv pip"
 
 # git
 alias glo='git log --oneline'
@@ -31,11 +30,11 @@ mcd() {
 venv() {
     if [ -d $1 ]; then
         source "$1/bin/activate"
-        uv install -U pip setuptools rich
+        uv pip install -U pip setuptools rich
     else
         virtualenv $1
         source "$1/bin/activate"
-        uv install -U pip setuptools rich
+        uv pip install -U pip setuptools rich
     fi
 }
 
